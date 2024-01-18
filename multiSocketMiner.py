@@ -113,7 +113,7 @@ def miner_thread(username, mining_key, node_address, node_port):
 
 def main():
     global soc_list
-    num_connections = 20  # Set the number of connections you want
+    num_connections = 15  # Set the number of connections you want
     username = 'alextereshyt'  # Replace with your username
     mining_key = 'alextereshyt'  # Replace with your mining key
 
