@@ -58,7 +58,7 @@ def miner_thread(username, mining_key, node_address, node_port):
             difficulty = job[2]
 
             hashingStartTime = time.time()
-            time.sleep(25)
+            #time.sleep(25)
             base_hash = hashlib.sha1(str(job[0]).encode('ascii'))
             temp_hash = None
 
