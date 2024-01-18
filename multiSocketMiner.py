@@ -14,6 +14,7 @@ from json import loads
 from threading import Thread
 
 soc_list = []  # List to store sockets
+delay = 0
 
 def current_time():
     t = time.localtime()
@@ -58,7 +59,7 @@ def miner_thread(username, mining_key, node_address, node_port):
             difficulty = job[2]
 
             hashingStartTime = time.time()
-            #time.sleep(25)
+            time.sleep(delay)
             base_hash = hashlib.sha1(str(job[0]).encode('ascii'))
             temp_hash = None
 
@@ -113,7 +114,12 @@ def miner_thread(username, mining_key, node_address, node_port):
 
 def main():
     global soc_list
-    num_connections = 15  # Set the number of connections you want
+    print('Enter number of connections: ');
+    num_connections = int(input())  # Set the number of connections you want
+
+    print('Enter delay per socket: ');
+    delay = int(input())  
+
     username = 'alextereshyt'  # Replace with your username
     mining_key = 'alextereshyt'  # Replace with your mining key
 
